@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Use the latest stable target framework -->
+    <TargetFramework>net8.0</TargetFramework>
+
+    <!-- Enable the newest C# compiler -->
+    <LangVersion>latest</LangVersion>
+
+    <!-- Produce an executable -->
+    <OutputType>Exe</OutputType>
+
+    <!-- Optional: enable nullable reference types -->
+    <Nullable>enable</Nullable>
+
+    <!-- Optional: warnings as errors -->
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- You are using JsonConvert -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
