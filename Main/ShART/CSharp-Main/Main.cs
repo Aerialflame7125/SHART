@@ -3,6 +3,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -159,18 +160,9 @@ namespace ShART
 
                         switch (action)
                         {
-                            case "exec":
-                                Console.WriteLine($"Exec command received: {msg}");
-                                await HandleExec(msg);
-                                break;
-
                             case "forward":
                                 Console.WriteLine($"Forward command received: {msg}");
                                 await HandleForward(msg);
-                                break;
-                            case "obj":
-                                Console.WriteLine($"Calling Object: {msg}");
-                                await CallMethod(msg);
                                 break;
 
                             default:
