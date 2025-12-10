@@ -41,5 +41,6 @@ jobs:
 
 
       # OPTIONAL: if you have tests (*.csproj in test folders)
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+      - name: Smoke Test
+        working-directory: Main/ShART/CSharp-Main
+        run: dotnet run
