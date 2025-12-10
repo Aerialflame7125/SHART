@@ -1,7 +1,4 @@
-*SH*itty
-*A*ccess
-*R*elay
-*T*unnel
+# **SH**itty **A**ccess **R**elay **T**unnel
 
 I know how stupid the name sounds, because it is.
 
