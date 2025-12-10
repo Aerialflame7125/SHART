@@ -34,7 +34,8 @@ jobs:
         run: dotnet restore
 
       - name: Build project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build Main/ShART/CSharp-Main/ShART.csproj --configuration Release --no-restore
+
 
       # OPTIONAL: if you have tests (*.csproj in test folders)
       - name: Run tests
