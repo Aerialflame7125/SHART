@@ -30,11 +30,14 @@ jobs:
       - name: Display .NET info
         run: dotnet --info
 
-      - name: Restore dependencies
+      - name: Restore project
+        working-directory: Main/ShART/CSharp-Main
         run: dotnet restore
 
       - name: Build project
-        run: dotnet build Main/ShART/CSharp-Main/ShART.csproj --configuration Release --no-restore
+        working-directory: Main/ShART/CSharp-Main
+        run: dotnet build --configuration Release --no-restore
+
 
 
       # OPTIONAL: if you have tests (*.csproj in test folders)
