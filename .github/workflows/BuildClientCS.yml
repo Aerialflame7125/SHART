@@ -1,0 +1,41 @@
+name: Build Client-side CS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET (latest)
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          dotnet-quality: 'ga'
+
+      # OPTIONAL: auto-rollforward to newest major version
+      - name: Enable roll-forward
+        run: |
+          echo "DOTNET_ROLL_FORWARD=latestMajor" >> $GITHUB_ENV
+
+      - name: Display .NET info
+        run: dotnet --info
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore
+
+      # OPTIONAL: if you have tests (*.csproj in test folders)
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal
